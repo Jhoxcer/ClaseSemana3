@@ -23,3 +23,22 @@ def fibonacci(n):
         l.append(b)
     return l
     
+# s Encontrar la moda en la serie --- Elkin Reinoso
+def encontrar_moda(numeros):
+    if not numeros:
+        return None
+
+    frecuencia = {}
+    for num in numeros:
+        if num in frecuencia:
+            frecuencia[num] += 1
+        else:
+            frecuencia[num] = 1
+    
+    moda = max(frecuencia, key=frecuencia.get)
+    return moda
+
+# Prueba de la función encontrar_moda
+numeros = [4, 1, 2, 2, 3, 3, 4, 4, 5, 4]
+moda = encontrar_moda(numeros)
+print(f"La moda de la serie de números {numeros} es: {moda}")
